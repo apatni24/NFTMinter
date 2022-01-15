@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const TOTAL_MINT_COUNT = 50;
 
-const CONTRACT_ADDRESS = "0x60931aA7e2228a15cB8e089c2cda2F1ee04F07D5";
+const CONTRACT_ADDRESS = "0xB54FC35B70965ba4D3a55172b4f29D7D720F7279";
 
 const App = () => {
 

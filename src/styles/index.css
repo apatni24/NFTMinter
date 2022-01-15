@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600&display=swap');
+body,
+html {
+  margin: 0;
+}
+
+button{
+  cursor: pointer;
+}
+
+body {
+  /* overflow: hidden; */
+  padding: 0;
+  /* font-family: -apple-system, Inter, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../assets/bg.png");
+  background-size: cover;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.card {
+  /* box-shadow: 0 4px 8px 0 rgba(255,255,255,0.2); */
+  width: 40%;
+  background-color: grey;
+  /* height: 40%; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0) 109.95%);
+  filter: drop-shadow(0px 2px 52px rgba(192, 192, 192, 0.2)) drop-shadow(21.4095px 25.6913px 42.8189px rgba(0, 0, 0, 0.05));
+  backdrop-filter: blur(29.9732px);
+  border-radius: 16px;
+  border: 1px rgba(255,255,255,0.33);
+  margin: auto;
+  border-style: solid;
+}
+.center {
+  margin: auto;
+  width:40%;
+}
+.flexBox{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.head3 {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+.topBar{
+  /* background-color: rgba(255,255,255); */
+  display: flex;
+  justify-content: space-between;
+  border: 1px rgba(255,255,255,0.33);
+  border-style: none none solid;
+  backdrop-filter: blur(29px);
+  -webkit-backdrop-filter: blur(29px);
+  filter: drop-shadow(21.4095px 25.6913px 42.8189px rgba(0, 0, 0, 0.05));
+}
+
+.connectBtn{
+  border-radius: 8px;
+  background-color: white;
+  background: linear-gradient(to right,#FD498B, #FEB369);
+  border: 2px transparent;
+  padding: 8px 12px;
+}
+
+.rightBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+.topBarBackground {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.30) -1.83%, rgba(255, 255, 255, 0));
+}
+
+input{
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+}
+
+.inputContainer {
+  text-align: center;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  padding-bottom: 0.83em;
+}
+
+label {
+  font-size: 14px;
+  color: #4F4F4F;
+}
+
+.inputFlexContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.projectName {
+  padding-left: 50px;
+}
+
+.inputFileContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+}
+
+input[type="file"] {
+  text-align: center;
+  width: initial;
+}
+
+input[name="description"]{
+  height: 100%;
+}
+
+.connectedWalletContainer {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-evenly;
+  color: #5815BF;
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+a{
+  text-decoration: none;
+}
+
+.mintingContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.83em;
+  padding-bottom: 1em;
+}
+
+.mintBtn {
+  background: white;
+  padding: 8px 16px;
+  border: 0;
+  color: #5815BF;
+  border-radius: 8px;
+}
+
+.mintBtn:disabled{
+  color: #828282;
+}
+
+.faucetLinkContainer {
+  display: flex;
+  align-items: center;
+}
+
+.backgroundContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.cardContainer {
+  position: absolute;
+  z-index:2;
+  width: 100%;
+  top: 35%;
+}
+
+.switchNetworkContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.switchNetworkNote {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.switchNetworkBtn {
+  border: 0px;
+  background-color: white;
+  border-radius: 0px 0px 16px 16px;
+  color: #5815BF;
+  padding: 16px;
+}
+
+.contentContainer {
+  padding-bottom: 0.83em;
+}
+
+.checkNftBtn {
+  border: 0px;
+  background-color: white;
+  border-radius: 0px 0px 16px 16px;
+  color: #5815BF;
+  padding: 16px;
+  width: 100%;
+  font-weight: 500;
+}
+
+.checkNftBtn:disabled{
+  color:#828282;
+}

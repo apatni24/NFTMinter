@@ -3,8 +3,6 @@ import './styles/App.css';
 import { ethers } from "ethers";
 import myEpicNft from './utils/MyEpicNFT.json';
 import axios from 'axios';
-// import Loader from "react-loader-spinner";
-// import FormCard from './FormCard';
 
 const TOTAL_MINT_COUNT = 50;
 

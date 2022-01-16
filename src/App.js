@@ -3,6 +3,7 @@ import './styles/App.css';
 import { ethers } from "ethers";
 import myEpicNft from './utils/MyEpicNFT.json';
 import axios from 'axios';
+import Loader, { Audio, BallTriangle, ThreeDots } from 'react-loader-spinner';
 
 const TOTAL_MINT_COUNT = 50;
 
@@ -216,11 +217,16 @@ const App = () => {
         <div className="projectName"><h2>NFT Minter</h2></div>
         <div className="rightBar">
           {currentAccount===""?
-          (<span><button className="connectBtn" onClick={connectWallet}>Connect to Wallet</button></span>):
-          <div className="connectedWalletContainer">
-            <div></div>
-            <span>{shortenAddress()}</span>
-          </div>}
+          (
+          <div className="gradientBorderBtnContainer">
+            <span><button className="connectBtn" onClick={connectWallet}>Connect Wallet</button></span>
+          </div>
+          ):
+          (<div className="connectedWalletContainer">
+            <div>
+              <span>{shortenAddress()}</span>
+            </div>
+          </div>)}
         </div>
       </div>
     </div>
@@ -255,9 +261,16 @@ const App = () => {
     return (
       <div className="cardContainer">
         <div className="card">
-          <div><span><h2>Your NFT is being minted</h2></span></div>
-          <div><span>This might take few moments, please be patient with us.</span></div>
+          <div><span>{(loading || waitingForNFTLink)? (<h2>Your NFT is being minted</h2>) : (<h2>Your NFT is minted</h2>)}</span></div>
+          <div>{(loading || waitingForNFTLink)? (<span>This might take few moments, please be patient with us.</span>) : (
+            <div className="mintNFTMessageContainer">
+              <span>Yessss!!</span>
+              <span>Your NFT is now minted. Go check it out!</span>
+            </div>
+            )}
+          </div>
           <div className="loader">
+            {(loading || waitingForNFTLink) && <ThreeDots type="ThreeDots" color="#888888" height={80} width={80} />}
           </div>
           <div><button className="checkNftBtn" onClick={goToRarible} disabled={loading || waitingForNFTLink}>Check your NFT</button></div>
         </div>
@@ -305,7 +318,12 @@ const App = () => {
       </div>
       <div className="mintingContainer">
         <div className="mintBtnContainer">
-          <button className="mintBtn" onClick={askContractToMintNft} disabled={isNetworkRinkeby===false || currentAccount===""}>MINT NFT</button>
+          {(isNetworkRinkeby===false || currentAccount==="") ? 
+            (<button className="mintBtn" onClick={askContractToMintNft} disabled>MINT NFT</button>):
+            (<div className="gradientBorderBtnContainer">
+              <button className="mintBtn" onClick={askContractToMintNft}>MINT NFT</button>
+            </div>
+            )}
         </div>
         <div className="faucetLinkContainer">
           <span><a href="https://buildspace-faucet.vercel.app/" target="_blank">Get ETH for minting</a></span>
@@ -314,7 +332,6 @@ const App = () => {
     </div>
           {!isNetworkRinkeby &&
             <SwitchNetworkCard />
-            // 
           }
           {(loading || mintedNFT!=="" || waitingForNFTLink) && 
             <MintingNFTCard />
